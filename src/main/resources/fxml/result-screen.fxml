@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane stylesheets="@../css/retro-styles.css"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.retroquiz.controller.ResultController"
+           style="-fx-background-color: black;">
+
+    <!-- Animated Background -->
+    <ImageView fx:id="backgroundView" pickOnBounds="true" preserveRatio="false" opacity="0.3" />
+
+    <!-- Results Container -->
+    <VBox alignment="TOP_CENTER" spacing="30.0" maxWidth="800">
+        <padding>
+            <Insets top="50.0" right="50.0" bottom="50.0" left="50.0"/>
+        </padding>
+
+        <!-- Title -->
+        <Label fx:id="titleLabel" text="QUIZ RESULTS" styleClass="retro-title-small"/>
+
+        <!-- Winner Announcement -->
+        <Label fx:id="winnerLabel" text="🏆 Winner: Player1 with 100 points!" 
+               style="-fx-text-fill: #ffff00; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <!-- Results Table -->
+        <TableView fx:id="resultsTable" prefWidth="700" prefHeight="300"
+                   style="-fx-background-color: rgba(0, 0, 0, 0.7); -fx-text-fill: white;">
+            
+            <columns>
+                <TableColumn fx:id="rankColumn" text="Rank" prefWidth="80" 
+                            style="-fx-alignment: CENTER;"/>
+                <TableColumn fx:id="usernameColumn" text="Player" prefWidth="400"/>
+                <TableColumn fx:id="scoreColumn" text="Score" prefWidth="220" 
+                            style="-fx-alignment: CENTER;"/>
+            </columns>
+        </TableView>
+
+        <!-- Action Buttons -->
+        <HBox alignment="CENTER" spacing="20.0">
+            <Button fx:id="viewLeaderboardButton" text="VIEW LEADERBOARD" 
+                    styleClass="neon-button, cyan"
+                    onAction="#handleViewLeaderboard"/>
+            
+            <Button fx:id="playAgainButton" text="PLAY AGAIN" 
+                    styleClass="neon-button, yellow"
+                    onAction="#handlePlayAgain"/>
+            
+            <Button fx:id="mainMenuButton" text="MAIN MENU" 
+                    styleClass="neon-button, magenta"
+                    onAction="#handleMainMenu"/>
+        </HBox>
+
+    </VBox>
+</StackPane>

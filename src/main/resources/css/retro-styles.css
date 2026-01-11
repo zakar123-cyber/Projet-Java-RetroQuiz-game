@@ -1,0 +1,503 @@
+/* === RETRO NEON STYLES === */
+
+/* 1. Title Styles */
+.retro-title {
+    -fx-font-family: "Impact";
+    -fx-font-size: 90px;
+    -fx-fill: #ff00de;
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 0, 222, 0.8), 20, 0.6, 0, 0);
+}
+
+.retro-title-small {
+    -fx-font-family: "Impact";
+    -fx-font-size: 36px;
+    -fx-fill: #ff00de;
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 0.5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 0, 222, 0.8), 10, 0.6, 0, 0);
+}
+
+/* 2. Base Button Styles */
+.neon-button {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-font-family: "Impact";
+    -fx-font-size: 24px;
+    -fx-cursor: hand;
+    -fx-border-width: 3;
+    -fx-padding: 12 50;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-text-fill: white;
+}
+
+.neon-button-small {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-border-width: 2;
+    -fx-padding: 8 20;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-text-fill: #00ffff;
+    -fx-font-weight: bold;
+}
+
+/* 3. Input Styles */
+.retro-input {
+    -fx-background-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-size: 14pt;
+    -fx-padding: 8px 10px;
+}
+
+/* FIX: Removes the glow on focus, keeping only the dynamic border color */
+.retro-input:focused {
+    -fx-border-color: -fx-input-color;
+    -fx-effect: none;
+}
+
+/* 4. Dynamic Color Variables (Set by Java Controller) */
+.neon-dynamic-content {
+    -fx-neon-color: #00ffff;
+    -fx-input-color: #00ffff;
+    -fx-secondary-text-color: #00ffff;
+}
+
+.neon-dynamic-content Label {
+    -fx-text-fill: -fx-secondary-text-color;
+}
+
+.neon-dynamic-content .retro-input {
+    -fx-border-color: -fx-input-color;
+}
+
+
+/* 5. Neon Border Box Style */
+.neon-border-box {
+    -fx-border-color:
+        linear-gradient(to bottom, #ff00ff 0%, #00ffff 33%, #ffff00 66%, #ff00ff 100%);
+    -fx-border-width: 3px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+    -fx-background-color: black;
+    /* The dropshadow color is set dynamically in the Java controller */
+    -fx-effect: dropshadow(gaussian, #ff00ff, 20, 0.8, 0, 0);
+}
+
+/* 6. Static Color Classes */
+.neon-button.cyan,
+.neon-button-small.cyan {
+    -fx-text-fill: #00ffff;
+    -fx-border-color: #00ffff;
+    -fx-effect: dropshadow(three-pass-box, #00ffff, 15, 0.3, 0, 0);
+}
+
+.neon-button.yellow,
+.neon-button-small.yellow {
+    -fx-text-fill: #ffff00;
+    -fx-border-color: #ffff00;
+    -fx-effect: dropshadow(three-pass-box, #ffff00, 15, 0.3, 0, 0);
+}
+
+.neon-button.magenta,
+.neon-button-small.magenta {
+    -fx-text-fill: #ff00ff;
+    -fx-border-color: #ff00ff;
+    -fx-effect: dropshadow(three-pass-box, #ff00ff, 15, 0.3, 0, 0);
+}
+
+
+/* 7. Hover Effects */
+.neon-button.cyan:hover,
+.neon-button-small.cyan:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.2);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 255, 0.8), 15, 0.6, 0, 0);
+}
+
+.neon-button.yellow:hover,
+.neon-button-small.yellow:hover {
+    -fx-background-color: rgba(255, 255, 0, 0.2);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 0, 0.8), 15, 0.6, 0, 0);
+}
+
+.neon-button.magenta:hover,
+.neon-button-small.magenta:hover {
+    -fx-background-color: rgba(255, 0, 255, 0.2);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 0, 255, 0.8), 15, 0.6, 0, 0);
+}
+
+/* Pressed state */
+.neon-button:pressed,
+.neon-button-small:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.title-text {
+    -fx-font-family: "Impact";
+    -fx-font-size: 48px;
+    -fx-text-fill: #00ffff;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 255, 0.4), 8, 0.5, 0, 0);
+}
+
+.neon-text-cyan {
+    -fx-text-fill: #00ffff;
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: normal;
+    -fx-effect: none;
+}
+
+.neon-text-yellow {
+    -fx-text-fill: #ffff00;
+    -fx-font-size: 28px;
+    -fx-font-family: "Courier New";
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 0, 0.3), 5, 0.3, 0, 0);
+}
+
+.small-text {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-style: italic;
+}
+
+.background-base {
+    -fx-background-color: black;
+    -fx-background-image: url('../images/retro-neon.gif');
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* 9. ListView Styles for Lobby */
+.list-view {
+    -fx-background-color: rgba(0, 0, 0, 0.9);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 3px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 255, 0.6), 15, 0.4, 0, 0);
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00ffff;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px;
+    -fx-alignment: center;
+    -fx-border-color: rgba(0, 255, 255, 0.2);
+    -fx-border-width: 0 0 1 0;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.3);
+    -fx-text-fill: #ffff00;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 255, 0.8), 10, 0.5, 0, 0);
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(0, 255, 255, 0.4);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 255, 1.0), 12, 0.6, 0, 0);
+}
+
+.list-view:focused .list-cell:filled:selected {
+    -fx-background-color: rgba(0, 255, 255, 0.4);
+}
+
+/* Scrollbar styling for ListView */
+.list-view .scroll-bar:vertical {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.list-view .scroll-bar:vertical .track {
+    -fx-background-color: rgba(0, 255, 255, 0.1);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 1px;
+}
+
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #00ffff;
+    -fx-background-radius: 5px;
+}
+
+.list-view .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #ffff00;
+}
+
+/* 8. Retro ComboBox Styles */
+.retro-combo-box {
+    -fx-background-color: transparent;
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 0 0 0 5;
+    -fx-background-radius: 5px;
+}
+
+.retro-combo-box:hover {
+    -fx-border-color: rgba(0, 255, 255, 0.8);
+    -fx-effect: dropshadow(three-pass-box, #00ffff, 5, 0.2, 0, 0);
+}
+
+.retro-combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+
+.retro-combo-box .cell:selected {
+    -fx-text-fill: #00ffff;
+    -fx-background-color: #333333;
+}
+
+.retro-combo-box-popup .list-view {
+    -fx-background-color: black;
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2px;
+}
+
+.retro-combo-box-popup .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-padding: 5px 10px;
+}
+
+.retro-combo-box-popup .list-cell:filled:selected,
+.retro-combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #333333;
+    -fx-text-fill: #00ffff;
+}
+
+.retro-combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.retro-combo-box .arrow {
+    -fx-background-color: #00ffff;
+}
+
+/* 10. TableView Styles for Leaderboard */
+.table-view {
+    -fx-background-color: rgba(0, 0, 0, 0.8);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #00ffff;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 0 0 2px 0;
+    -fx-size: 35px;
+    -fx-border-radius: 0px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #00ffff;
+    -fx-font-family: "Courier New";
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-padding: 8px;
+    -fx-border-color: rgba(0, 255, 255, 0.2);
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(0, 255, 255, 0.05);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(0, 255, 255, 0.3);
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.15);
+}
+
+/* Special styling for top 3 ranks - WHITE TEXT */
+.table-row-cell:filled>.table-cell {
+    -fx-text-fill: #ffffff;
+}
+
+/* Scrollbar for TableView */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.table-view .scroll-bar:vertical .track {
+    -fx-background-color: rgba(0, 255, 255, 0.1);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 1px;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #00ffff;
+    -fx-background-radius: 5px;
+}
+
+.table-view .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #ffff00;
+}
+
+.table-view .scroll-bar:horizontal {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.table-view .scroll-bar:horizontal .track {
+    -fx-background-color: rgba(0, 255, 255, 0.1);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 1px;
+}
+
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #00ffff;
+    -fx-background-radius: 5px;
+}
+
+.table-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #ffff00;
+}
+
+/* TableView Scrollbar Increment/Decrement Buttons */
+.table-view .scroll-bar .increment-button,
+.table-view .scroll-bar .decrement-button {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-color: rgba(0, 255, 255, 0.5);
+    -fx-padding: 0;
+}
+
+.table-view .scroll-bar .increment-button:hover,
+.table-view .scroll-bar .decrement-button:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.2);
+}
+
+.table-view .scroll-bar .increment-arrow,
+.table-view .scroll-bar .decrement-arrow {
+    -fx-background-color: #00ffff;
+    -fx-shape: null;
+}
+
+/* TableView Corner - where scrollbars meet */
+.table-view .corner {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark Panel Container for Management Screens */
+.dark-panel {
+    -fx-background-color: rgba(0, 0, 0, 0.85);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 3px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 255, 0.6), 20, 0.5, 0, 0);
+    -fx-padding: 20px;
+}
+
+/* TextArea Styling */
+.text-area {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-text-fill: #00ffff;
+    -fx-font-family: 'Courier New', monospace;
+    -fx-font-size: 14px;
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-prompt-text-fill: rgba(0, 255, 255, 0.5);
+}
+
+.text-area .content {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+}
+
+.text-area:focused {
+    -fx-border-color: #ffff00;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 0, 0.6), 10, 0.5, 0, 0);
+}
+
+/* Scrollbar Styling - Remove White Scrollbars */
+.scroll-bar {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(0, 255, 255, 0.6);
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.8);
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: rgba(255, 255, 0, 0.8);
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-color: rgba(0, 255, 255, 0.3);
+    -fx-border-width: 1px;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-color: rgba(0, 255, 255, 0.5);
+}
+
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.2);
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #00ffff;
+}
+
+/* Vertical Scrollbar */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(0, 255, 255, 0.6);
+}
+
+/* Horizontal Scrollbar */
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: rgba(0, 255, 255, 0.6);
+}

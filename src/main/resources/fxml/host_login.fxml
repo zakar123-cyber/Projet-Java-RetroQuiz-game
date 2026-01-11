@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane stylesheets="@../css/retro-styles.css"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.retroquiz.controller.HostLoginController"
+           style="-fx-background-color: black;">
+
+    <ImageView fx:id="backgroundView" pickOnBounds="true" preserveRatio="false" opacity="0.4" />
+
+    <VBox alignment="CENTER" spacing="25.0" maxWidth="500">
+        <padding>
+            <Insets top="50.0" right="50.0" bottom="50.0" left="50.0"/>
+        </padding>
+
+        <Label text="ADMIN ACCESS" styleClass="retro-title-small" />
+
+        <VBox fx:id="neonBox" styleClass="neon-border-box, neon-dynamic-content" alignment="TOP_CENTER" spacing="25.0">
+            <padding>
+                <Insets top="15.0" bottom="15.0" left="15.0" right="15.0" />
+            </padding>
+
+            <VBox spacing="15.0" alignment="CENTER">
+
+                <VBox spacing="5.0" alignment="CENTER_LEFT">
+                    <Label text="Admin Username:" />
+                    <TextField fx:id="usernameField" promptText="admin" styleClass="retro-input" />
+                </VBox>
+
+                <VBox spacing="5.0" alignment="CENTER_LEFT">
+                    <Label text="Password:" />
+                    <PasswordField fx:id="passwordField" promptText="******" styleClass="retro-input" />
+                </VBox>
+
+                <Label fx:id="feedbackLabel" text="" styleClass="neon-secondary-text" />
+                <Button fx:id="loginButton" text="LOGIN" styleClass="neon-button, cyan"
+                        onAction="#handleLogin">
+                    <VBox.margin>
+                        <Insets top="15.0" />
+                    </VBox.margin>
+                </Button>
+            </VBox>
+
+        </VBox>
+
+        <Button fx:id="backButton" text="BACK TO MENU" styleClass="neon-button, yellow"
+                onAction="#handleBackToMenu">
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </Button>
+
+    </VBox>
+</StackPane>

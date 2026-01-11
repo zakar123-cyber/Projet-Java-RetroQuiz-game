@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<StackPane fx:id="rootPane"
+           stylesheets="@../css/retro-styles.css"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.retroquiz.controller.MainController"
+           styleClass="background-base">
+
+    <VBox alignment="CENTER" spacing="60.0">
+        <padding>
+            <Insets bottom="50.0" />
+        </padding>
+
+        <Text text="RETRO QUIZ" styleClass="retro-title" />
+
+        <HBox alignment="CENTER" spacing="80.0">
+            <Button fx:id="adminLoginButton" text="ADMIN LOGIN" styleClass="neon-button, cyan"
+                    onAction="#handleHostLogin"/>
+            <Button fx:id="participantButton" text="JOIN GAME" styleClass="neon-button, yellow"
+                    onAction="#handleParticipantJoin"/>
+        </HBox>
+
+    </VBox>
+</StackPane>
