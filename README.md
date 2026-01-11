@@ -78,10 +78,4 @@ mvn javafx:run
 - **Play**: Join a quiz lobby and test your knowledge!
 - **Admin**: Log in with admin credentials to access the Dashboard to manage content.
 
-## 🤝 Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
